@@ -4,7 +4,7 @@ resource "aws_vpc" "infra" {
   cidr_block = "10.0.0.0/16"
 
   tags = {
-    "Name" = "${var.resource_prefix}-infraform-vpc"
+    "Name" = "${var.resource_prefix}-infra-vpc"
   }
 }
 
@@ -17,7 +17,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 
   tags = {
-    "Name" = "${var.resource_prefix}-infraform-public-subnet${count.index+1}"
+    "Name" = "${var.resource_prefix}-infra-public-subnet${count.index+1}"
   }
 }
 

@@ -35,8 +35,8 @@ resource "aws_db_instance" "infra" {
 }
 
 resource "aws_security_group" "infra" {
-  name        = "${var.resource_prefix}-infraform_rds_sg"
-  description = "Infraform RDS Mysql sg"
+  name        = "${var.resource_prefix}-infra_rds_sg"
+  description = "Infrastructure RDS Mysql sg"
   vpc_id      = var.vpc_id
 
   ingress {
