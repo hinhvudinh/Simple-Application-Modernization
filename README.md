@@ -23,7 +23,7 @@ The company engineer studies the BookStore application and report its current st
 
 *Business status*:  
 
-![bookstore-asis-tobe](https://github.com/hinhvudinh/Simple-Application-Modernization-using-AWS-EKS/assets/18361892/aa1b6fb3-dcf7-4ec2-902f-f87e177e13eb)
+![bookstore-asis-tobe](img/bookstore-asis-tobe.png)
 
               
 The figure above represents the workflow of the BookStore application. Users has permission only to view the books while owner and developers can view, create, update and delete the books. The request then processes by application on local server and verify the availability based on BookId. If there is requested books in the list then the requesters can process the request, otherwise the application will return the error to the requesters. The application is required to have stability operation with 24/7 availability and near real-time demand. It also has to have the ability to handle operational overhead especially in the event of new books released or sale-off campaigns. However, it is difficult to scale the resources of the local sever to meet the demand while the owner need to purchase and install additional servers. It is critical pain points of the current architecture.
@@ -31,7 +31,7 @@ The figure above represents the workflow of the BookStore application. Users has
 
 *Architecture status*:
 
-![on-premises-diagram](https://github.com/hinhvudinh/Simple-Application-Modernization-using-AWS-EKS/assets/18361892/1b287104-a17d-4b18-94b6-d369c2ccd44d)
+![on-premises-diagram](img/on-premises-diagram.png)
 
 
 The BookStore application is currently organized as 3-tier architecture: the presentation tier, or user interface; the application tier, where data is processed; and the in memory data tier, where the data associated with the application is stored and managed. These layers are highly tight-coupling then it difficult to scale based on high traffic or if a tier change its logics, there may be errors on other tiers. In addition, it operates on old version of Java, which lacks the modern features and security enhancements as in the latest version.
@@ -55,7 +55,7 @@ For the issues of the on-premise server, the engineer suggests to migrate this a
 
 For the architecture, the engineer decides to re-architect the application from monolith architecture to microservices architecture as  
 
-![bookstore-tobe-asis-arch-v2](https://github.com/hinhvudinh/Simple-Application-Modernization-using-AWS-EKS/assets/18361892/df6fb2b0-0776-4e59-8586-c298289a2258) 
+![bookstore-tobe-asis-arch-v2](img/bookstore-tobe-asis-arch-v2.png) 
 
 
 
@@ -64,7 +64,7 @@ The figure on the left shows the current Book Store application that runs on-pre
 
 For the explanation purpose, the engineer design a detail workflow solution for the app as follows:  
 
-![bookstore-cicd-blog](https://github.com/hinhvudinh/Simple-Application-Modernization-using-AWS-EKS/assets/18361892/17df282b-9aaf-4b79-8acb-6dbe0cab982f)
+![bookstore-cicd-blog](img/bookstore-cicd-blog.png)
 
 As the figure above, the architecture categories into 2 modules: Development module and Operation module
 In the development module, the engineer will:  
